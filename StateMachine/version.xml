@@ -2,8 +2,8 @@
   <Major>2</Major>
   <Minor>0</Minor>
   <Build>0</Build>
-  <Revision>22</Revision>
-  <VersionName>2.0.22</VersionName>
+  <Revision>0</Revision>
+  <VersionName>2.0.0</VersionName>
   <Title>StateMachine</Title>
   <Description>The StateMachine Add-In provides a RAPID state machine implementation</Description>
   <Date>2022-02-08</Date>

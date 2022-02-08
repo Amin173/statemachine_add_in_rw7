@@ -25,7 +25,7 @@
   </Rules>
   <Packages>
     <FeatureRef id="open.statemachine.description">
-      <Package id="open.statemachine_2.0.0.rpk" platform="vc;rc;rcsim" digest="7D6787483FF23882E6A2AD33A6941584EB620D0B" />
+      <Package id="open.statemachine_2.0.0.rpk" platform="vc;rc;rcsim" digest="F41763D71EB189BC9FCFB67931FB93AB818A1C0F" />
     </FeatureRef>
   </Packages>
 </ProductManifest>

@@ -6,8 +6,8 @@
     <publisher>Moritz Schauer</publisher>
     <url>https://thm.de/</url>
     <publish_date>2022-02-08</publish_date>
-    <version>2.00.0022.00</version>
-    <PackageSemanticVersion>2.0.21</PackageSemanticVersion>
+    <version>2.00.0000.00</version>
+    <PackageSemanticVersion>2.0.22</PackageSemanticVersion>
   </metadata>
   <res>
     <payload id="open.statemachine">
