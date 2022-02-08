@@ -1,1 +1,3 @@
-# abb_statemachine_add_in_rw7
+# Statemachine RW7 Add-In
+
+Current implementation is missing Watchdog and SmartGripper capabilities

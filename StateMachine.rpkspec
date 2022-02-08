@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rpk_spec version="1.0">
+  <metadata>
+    <id>open.statemachine</id>
+    <description>The StateMachine Add-In provides a RAPID state machine implementation</description>
+    <publisher>Moritz Schauer</publisher>
+    <url>https://thm.de/</url>
+    <publish_date>2022-02-08</publish_date>
+    <version>2.00.0022.00</version>
+    <PackageSemanticVersion>2.0.21</PackageSemanticVersion>
+  </metadata>
+  <res>
+    <payload id="open.statemachine">
+      <type>basic</type>
+      <platforms>
+        <platform>rc</platform>
+        <platform>vc</platform>
+      </platforms>
+      <files>
+        <file dest="config\StateMachine_eio.cfg" src=".\StateMachine\config\StateMachine_eio.cfg" />
+        <file dest="config\StateMachine_mmc.cfg" src=".\StateMachine\config\StateMachine_mmc.cfg" />
+        <file dest="config\StateMachine_moc.cfg" src=".\StateMachine\config\StateMachine_moc.cfg" />
+        <file dest="config\StateMachine_sio.cfg" src=".\StateMachine\config\StateMachine_sio.cfg" />
+        <file dest="config\StateMachine_sys.cfg" src=".\StateMachine\config\StateMachine_sys.cfg" />
+        <file dest="RAPID\TRobEGM.mod" src=".\StateMachine\RAPID\TRobEGM.mod" />
+        <file dest="RAPID\TRobMain.mod" src=".\StateMachine\RAPID\TRobMain.mod" />
+        <file dest="RAPID\TRobRAPID.mod" src=".\StateMachine\RAPID\TRobRAPID.mod" />
+        <file dest="RAPID\TRobSystem.sys" src=".\StateMachine\RAPID\TRobSystem.sys" />
+        <file dest="RAPID\TRobSystemExample.sys" src=".\StateMachine\RAPID\TRobSystemExample.sys" />
+        <file dest="RAPID\TRobUtility.mod" src=".\StateMachine\RAPID\TRobUtility.mod" />
+        <file dest="install.cmd" src=".\StateMachine\install.cmd" />
+      </files>
+    </payload>
+  </res>
+</rpk_spec>

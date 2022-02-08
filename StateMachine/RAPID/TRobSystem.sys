@@ -1,0 +1,103 @@
+MODULE TRobSystem(SYSMODULE)
+!=======================================================================================================================
+! Copyright (c) 2018, ABB Schweiz AG
+! All rights reserved.
+!
+! Redistribution and use in source and binary forms, with
+! or without modification, are permitted provided that
+! the following conditions are met:
+!
+!    * Redistributions of source code must retain the
+!      above copyright notice, this list of conditions
+!      and the following disclaimer.
+!    * Redistributions in binary form must reproduce the
+!      above copyright notice, this list of conditions
+!      and the following disclaimer in the documentation
+!      and/or other materials provided with the
+!      distribution.
+!    * Neither the name of ABB nor the names of its
+!      contributors may be used to endorse or promote
+!      products derived from this software without
+!      specific prior written permission.
+!
+! THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+! AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+! IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+! ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE
+! LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+! DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+! SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+! CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
+! OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+! THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+!=======================================================================================================================
+
+    !-------------------------------------------------------------------------------------------------------------------
+    !
+    ! Module: TRobSystem [Autoloaded by the StateMachine AddIn]
+    !
+    ! Description:
+    !   Provides functionality for a user to add system specific initialization, as well as functionality to register
+    !   custom RAPID routines so that they can be executed by the StateMachine. The custom RAPID routines can for
+    !   example be triggered by an external system via Robot Web Services (RWS).
+    !
+    !   Add system specific initialization to the "initializeSystemModule" procedure below.
+    !
+    !   Register new custom routines according to:
+    !   - Step 1: Implement a custom RAPID routine (e.g. in another module).
+    !   - Step 2: Add a new case for the custom routine to the "attemptSystemRoutine" or the
+    !             "attemptNonBlockingSystemRoutine" functions below.
+    !   - Step 3: An external system can then request the state machine to execute the custom routine (e.g. via RWS).
+    !
+    ! Author: Jon Tjerngren (jon.tjerngren@se.abb.com)
+    !
+    ! Version: 1.1
+    !
+    !-------------------------------------------------------------------------------------------------------------------
+
+    !---------------------------------------------------------
+    ! Primary procedures
+    !---------------------------------------------------------
+    PROC initializeSystemModule()
+        ! Add system specific initialization here.
+        ! For example custom procedures setting up interrupts, timers or default system settings.
+    ENDPROC
+
+    !---------------------------------------------------------
+    ! Primary functions
+    !---------------------------------------------------------
+    FUNC bool attemptSystemRoutine(string routine_name)
+        VAR bool found := TRUE;
+
+        TEST routine_name
+            CASE "example1":
+                example1; ! Example routine implemented in the module "TRobSystemExample".
+
+            !CASE "custom_routine":
+            !    custom_routine;
+
+            DEFAULT:
+                found := FALSE;
+        ENDTEST
+
+        RETURN found;
+    ENDFUNC
+
+    ! IMPORTANT: These routines will be executed inside a TRAP function, and should therefore be brief.
+    FUNC bool attemptNonBlockingSystemRoutine(string routine_name)
+        VAR bool found := TRUE;
+
+        TEST routine_name
+            CASE "example2_non_blocking":
+                example2_non_blocking; ! Example routine implemented in the module "TRobSystemExample".
+
+            !CASE "custom_routine":
+            !    custom_routine;
+
+            DEFAULT:
+                found := FALSE;
+        ENDTEST
+
+        RETURN found;
+    ENDFUNC
+ENDMODULE
