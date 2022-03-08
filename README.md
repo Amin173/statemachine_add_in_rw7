@@ -15,7 +15,7 @@ and then select then select the installation package as shown below:
 <p align="center">
   <img src="docs/images/select_open_statemachine_2_0_0.png">
   <br>
-  <i>Browse the State Machine 2.0 from your local directory.</i>
+  <i>Select the State Machine 2.0 installation file.</i>
 </p>
 
 The rest of the installation steps are similar to the State Machine 1.1.
